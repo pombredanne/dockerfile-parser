@@ -178,8 +178,3 @@ def parse(file_or_cmds, onbuid=False, with_container_id=False):
                 onbuild_lines, onbuid=True, with_container_id=False)
 
     return data
-
-
-if __name__ == '__main__':
-    parsed = parse('../Dockerfile')
-    print(json.dumps(parsed, indent=2, separators=(',', ': ')))
