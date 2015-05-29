@@ -18,11 +18,11 @@ python setup.py install
 Example parsing [Dockerfile](https://github.com/docker-library/cassandra/blob/master/2.1/Dockerfile) project Cassandra (in json-format):
 
 ```python
-import json
-import docker_parser
+from json import dumps
+from dockerfile_parser import parser
 
-parsed = docker_parser.parse('path/to/cassandra/Dockerfile')
-print(json.dumps(parsed, indent=2, separators=(',', ': ')))
+parsed = parser.parse('./my-dockerfile')
+print(dumps(parsed, indent=2, separators=(',', ': ')))
 ```
 
 Result:
