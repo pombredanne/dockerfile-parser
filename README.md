@@ -9,7 +9,7 @@
 
 ```shell
 git clone https://github.com/eg0r/dockerfile-parser
-cd dockerfile-parser-master
+cd dockerfile-parser
 python setup.py install
 ```
 
