@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='dockerfile-parser',
     keywords='docker dockerfile parser parsing',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/eg0r/dockerfile-parser',
     license='MIT',
     author='Egor Smolyakov',
@@ -11,7 +11,6 @@ setup(
     description='Library for parsing Dockerfile.',
     zip_safe=False,
     packages=find_packages(),
-    py_modules=['dockerfile_parse'],
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
