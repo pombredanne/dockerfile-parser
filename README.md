@@ -1,6 +1,31 @@
+#### Where can I use the library?
+
+* Create a utility that will optimize Dockerfile
+* In the analysis of a large number of Dockerfile
+* Checking commands that will be launched in the container
+* ... also in other practical or research purposes
+
+#### Installing
+
+```shell
+git clone https://github.com/eg0r/dockerfile-parser
+cd dockerfile-parser-master
+python setup.py install
+```
+
 #### Getting started
 
 Example parsing [Dockerfile](https://github.com/docker-library/cassandra/blob/master/2.1/Dockerfile) project Cassandra (in json-format):
+
+```python
+import json
+import docker_parser
+
+parsed = docker_parser.parse('path/to/cassandra/Dockerfile')
+print(json.dumps(parse('../Dockerfile'), indent=2, separators=(',', ': ')))
+```
+
+Result:
 
     {
       "workdir": {
@@ -52,12 +77,5 @@ Example parsing [Dockerfile](https://github.com/docker-library/cassandra/blob/ma
         9160
       ]
     }
-
-#### Where can I use the library?
-
-* Create a utility that will optimize Dockerfile
-* In the analysis of a large number of Dockerfile
-* Checking commands that will be launched in the container
-* ... also in other practical or research purposes
 
 Please let us know if they find errors.
