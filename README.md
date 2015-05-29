@@ -60,6 +60,4 @@ Example parsing [Dockerfile](https://github.com/docker-library/cassandra/blob/ma
 * Checking commands that will be launched in the container
 * ... also in other practical or research purposes
 
-#### Errors and bugs
-
-If you are working with a library errors, [create](https://github.com/eg0r/dockerfile-parser/issues/new) issue, so it can be corrected.
+Please let us know if they find errors.
