@@ -73,12 +73,12 @@ def _to_commands(path):
     return commands
 
 
-def parse(file_or_cmds, onbuid=False, with_container_id=False):
+def parse(file_or_cmds, onbuild=False, with_container_id=False):
     """
     Getting the structure Dockerfile
     """
 
-    commands = file_or_cmds if onbuid else _to_commands(file_or_cmds)
+    commands = file_or_cmds if onbuild else _to_commands(file_or_cmds)
     image = _get_dist_name(commands)
 
     workdir, first, user, data, onbuild_lines = '/', True, 'root', \
@@ -88,7 +88,7 @@ def parse(file_or_cmds, onbuid=False, with_container_id=False):
             if image not in data:
                 data[image] = OrderedDict()
 
-            if not onbuid:
+            if not onbuild:
                 if 'workdir' not in data[image]:
                     data[image]['workdir'] = OrderedDict()
 
@@ -100,7 +100,7 @@ def parse(file_or_cmds, onbuid=False, with_container_id=False):
 
             struct = data[image]
         else:
-            if not onbuid:
+            if not onbuild:
                 if 'workdir' not in data:
                     data['workdir'] = OrderedDict()
 
@@ -112,7 +112,7 @@ def parse(file_or_cmds, onbuid=False, with_container_id=False):
 
             struct = data
 
-        if onbuid:
+        if onbuild:
             udata = struct
         else:
             udata = struct['workdir'][workdir][user]
@@ -175,6 +175,6 @@ def parse(file_or_cmds, onbuid=False, with_container_id=False):
 
         if len(onbuild_lines):
             struct['onbuild'] = parse(
-                onbuild_lines, onbuid=True, with_container_id=False)
+                onbuild_lines, onbuild=True, with_container_id=False)
 
     return data
