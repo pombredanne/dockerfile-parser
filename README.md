@@ -22,7 +22,7 @@ import json
 import docker_parser
 
 parsed = docker_parser.parse('path/to/cassandra/Dockerfile')
-print(json.dumps(parse('../Dockerfile'), indent=2, separators=(',', ': ')))
+print(json.dumps(parsed, indent=2, separators=(',', ': ')))
 ```
 
 Result:
