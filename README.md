@@ -21,7 +21,7 @@ Example parsing [Dockerfile](https://github.com/docker-library/cassandra/blob/ma
 from json import dumps
 from dockerfile_parser import parser
 
-parsed = parser.parse('./my-dockerfile')
+parsed = parser.parse('/path/to/cassandra/Dockerfile')
 print(dumps(parsed, indent=2, separators=(',', ': ')))
 ```
 
