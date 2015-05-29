@@ -8,6 +8,12 @@
 #### Installing
 
 ```shell
+pip install dockerfile-parser
+```
+
+or
+
+```shell
 git clone https://github.com/eg0r/dockerfile-parser
 cd dockerfile-parser
 python setup.py install
